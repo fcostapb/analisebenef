@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_d4280c53f7b4372c449ba77e856bf5ed {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+     <div style="position: fixed; 
+                 bottom: 50px; left: 50px; width: 250px; height: 60px; 
+                 border:2px solid grey; z-index:9999; font-size:12px;
+                 background-color:white;
+                 ">
+         <b>Beneficiários > 60 anos por bairro</b><br>
+         <div style="display: inline-block; 
+                     width: 20px; height: 20px; 
+                     background-color: blue; opacity: 0.6;
+                     margin-right: 5px;">
+         </div>
+         * Tamanho proporcional à quantidade
+     </div>
+    
+            <div class="folium-map" id="map_d4280c53f7b4372c449ba77e856bf5ed" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_d4280c53f7b4372c449ba77e856bf5ed = L.map(
+                "map_d4280c53f7b4372c449ba77e856bf5ed",
+                {
+                    center: [-7.1195, -34.845],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 12,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_93a7f8a0df4b08264e94f67007fbf03d = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_93a7f8a0df4b08264e94f67007fbf03d.addTo(map_d4280c53f7b4372c449ba77e856bf5ed);
+        
+    
+            var circle_6e557aa023fddd533cb19b7e50facb5d = L.circle(
+                [-7.1049787, -34.8344596],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 500.0, "stroke": true, "weight": 3}
+            ).addTo(map_d4280c53f7b4372c449ba77e856bf5ed);
+        
+    
+            circle_6e557aa023fddd533cb19b7e50facb5d.bindTooltip(
+                `<div>
+                     <strong> MANAIRA</strong> <br>Quantidade de beneficiários:<strong>132 </strong>
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_f0e8e90fdc38be1e4411d7a2049f161b = L.circle(
+                [-7.1214602, -34.8379003],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 253.78787878787878, "stroke": true, "weight": 3}
+            ).addTo(map_d4280c53f7b4372c449ba77e856bf5ed);
+        
+    
+            circle_f0e8e90fdc38be1e4411d7a2049f161b.bindTooltip(
+                `<div>
+                     <strong> MIRAMAR</strong> <br>Quantidade de beneficiários:<strong>67 </strong>
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_990b23f37c88cf128ca94a8a38d0cc53 = L.circle(
+                [-7.1153426, -34.8257456],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 193.18181818181816, "stroke": true, "weight": 3}
+            ).addTo(map_d4280c53f7b4372c449ba77e856bf5ed);
+        
+    
+            circle_990b23f37c88cf128ca94a8a38d0cc53.bindTooltip(
+                `<div>
+                     <strong> TAMBAU</strong> <br>Quantidade de beneficiários:<strong>51 </strong>
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_0c6af95541705a79e06749df8bdf44a8 = L.circle(
+                [-7.0812307, -34.8346477],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 193.18181818181816, "stroke": true, "weight": 3}
+            ).addTo(map_d4280c53f7b4372c449ba77e856bf5ed);
+        
+    
+            circle_0c6af95541705a79e06749df8bdf44a8.bindTooltip(
+                `<div>
+                     <strong> JARDIM OCEANIA</strong> <br>Quantidade de beneficiários:<strong>51 </strong>
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_0eb5d80a794613ed5f179bce50c30584 = L.circle(
+                [-7.06666755, -34.843606536023294],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 151.51515151515153, "stroke": true, "weight": 3}
+            ).addTo(map_d4280c53f7b4372c449ba77e856bf5ed);
+        
+    
+            circle_0eb5d80a794613ed5f179bce50c30584.bindTooltip(
+                `<div>
+                     <strong> BESSA</strong> <br>Quantidade de beneficiários:<strong>40 </strong>
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_3f7914523ead545bfa03f42fef869e2c = L.circle(
+                [-7.1353414, -34.8196967],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 147.72727272727275, "stroke": true, "weight": 3}
+            ).addTo(map_d4280c53f7b4372c449ba77e856bf5ed);
+        
+    
+            circle_3f7914523ead545bfa03f42fef869e2c.bindTooltip(
+                `<div>
+                     <strong> CABO BRANCO</strong> <br>Quantidade de beneficiários:<strong>39 </strong>
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_e09e0f52640b2eae08de238e0aa9fc35 = L.circle(
+                [-7.1150428, -34.8567486],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 143.93939393939394, "stroke": true, "weight": 3}
+            ).addTo(map_d4280c53f7b4372c449ba77e856bf5ed);
+        
+    
+            circle_e09e0f52640b2eae08de238e0aa9fc35.bindTooltip(
+                `<div>
+                     <strong> BAIRRO DOS ESTADOS</strong> <br>Quantidade de beneficiários:<strong>38 </strong>
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_2664fd4eb0b7be2287293c241a2501bd = L.circle(
+                [-7.1147083, -34.8466675],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 113.63636363636363, "stroke": true, "weight": 3}
+            ).addTo(map_d4280c53f7b4372c449ba77e856bf5ed);
+        
+    
+            circle_2664fd4eb0b7be2287293c241a2501bd.bindTooltip(
+                `<div>
+                     <strong> PEDRO GONDIM</strong> <br>Quantidade de beneficiários:<strong>30 </strong>
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_94e01550638b4330dc4e181083d6e1d7 = L.circle(
+                [-7.1336871, -34.8279943],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 94.69696969696969, "stroke": true, "weight": 3}
+            ).addTo(map_d4280c53f7b4372c449ba77e856bf5ed);
+        
+    
+            circle_94e01550638b4330dc4e181083d6e1d7.bindTooltip(
+                `<div>
+                     <strong> ALTIPLANO CABO BRANCO</strong> <br>Quantidade de beneficiários:<strong>25 </strong>
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_c022b77eaf9908cc50f2fbbe30975e46 = L.circle(
+                [-7.0809021, -34.8425402],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 94.69696969696969, "stroke": true, "weight": 3}
+            ).addTo(map_d4280c53f7b4372c449ba77e856bf5ed);
+        
+    
+            circle_c022b77eaf9908cc50f2fbbe30975e46.bindTooltip(
+                `<div>
+                     <strong> AEROCLUBE</strong> <br>Quantidade de beneficiários:<strong>25 </strong>
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_748006b9e73e5d22444b6b73f114937a = L.circle(
+                [-7.1220693, -34.847951],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 90.90909090909092, "stroke": true, "weight": 3}
+            ).addTo(map_d4280c53f7b4372c449ba77e856bf5ed);
+        
+    
+            circle_748006b9e73e5d22444b6b73f114937a.bindTooltip(
+                `<div>
+                     <strong> TAMBAUZINHO</strong> <br>Quantidade de beneficiários:<strong>24 </strong>
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_0e9e0f4221794b475e2122af2c460ac6 = L.circle(
+                [-7.1488492, -34.8161888],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 75.75757575757576, "stroke": true, "weight": 3}
+            ).addTo(map_d4280c53f7b4372c449ba77e856bf5ed);
+        
+    
+            circle_0e9e0f4221794b475e2122af2c460ac6.bindTooltip(
+                `<div>
+                     <strong> PORTAL DO SOL</strong> <br>Quantidade de beneficiários:<strong>20 </strong>
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_252f4311505a989c809e2b5a7b3ad2ef = L.circle(
+                [-7.1593848, -34.8757328],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 68.18181818181817, "stroke": true, "weight": 3}
+            ).addTo(map_d4280c53f7b4372c449ba77e856bf5ed);
+        
+    
+            circle_252f4311505a989c809e2b5a7b3ad2ef.bindTooltip(
+                `<div>
+                     <strong> CRISTO REDENTOR</strong> <br>Quantidade de beneficiários:<strong>18 </strong>
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_b6cd61049210d1517571498bbb8b79a0 = L.circle(
+                [-7.1006548, -34.8550283],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 64.39393939393939, "stroke": true, "weight": 3}
+            ).addTo(map_d4280c53f7b4372c449ba77e856bf5ed);
+        
+    
+            circle_b6cd61049210d1517571498bbb8b79a0.bindTooltip(
+                `<div>
+                     <strong> IPES</strong> <br>Quantidade de beneficiários:<strong>17 </strong>
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_e62263ae031035db128f4112d408dbff = L.circle(
+                [-7.1148299, -34.8392392],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 60.60606060606061, "stroke": true, "weight": 3}
+            ).addTo(map_d4280c53f7b4372c449ba77e856bf5ed);
+        
+    
+            circle_e62263ae031035db128f4112d408dbff.bindTooltip(
+                `<div>
+                     <strong> BRISAMAR</strong> <br>Quantidade de beneficiários:<strong>16 </strong>
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_581234cfa784e1819535c3f8feeee97d = L.circle(
+                [-7.1483721, -34.8385343],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 60.60606060606061, "stroke": true, "weight": 3}
+            ).addTo(map_d4280c53f7b4372c449ba77e856bf5ed);
+        
+    
+            circle_581234cfa784e1819535c3f8feeee97d.bindTooltip(
+                `<div>
+                     <strong> BANCARIOS</strong> <br>Quantidade de beneficiários:<strong>16 </strong>
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_ec675662172e65e27f44fb34a11d0c91 = L.circle(
+                [-7.1117056, -34.8656698],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 53.03030303030303, "stroke": true, "weight": 3}
+            ).addTo(map_d4280c53f7b4372c449ba77e856bf5ed);
+        
+    
+            circle_ec675662172e65e27f44fb34a11d0c91.bindTooltip(
+                `<div>
+                     <strong> TREZE DE MAIO</strong> <br>Quantidade de beneficiários:<strong>14 </strong>
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_7749c52e1e5297bebbe2c8c4dbc789ab = L.circle(
+                [-7.1551066, -34.8364492],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 53.03030303030303, "stroke": true, "weight": 3}
+            ).addTo(map_d4280c53f7b4372c449ba77e856bf5ed);
+        
+    
+            circle_7749c52e1e5297bebbe2c8c4dbc789ab.bindTooltip(
+                `<div>
+                     <strong> JARDIM CIDADE UNIVERSITARIA</strong> <br>Quantidade de beneficiários:<strong>14 </strong>
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_f1a6ab242cda639cd9372153f4ebec91 = L.circle(
+                [-7.1235825, -34.8527981],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 53.03030303030303, "stroke": true, "weight": 3}
+            ).addTo(map_d4280c53f7b4372c449ba77e856bf5ed);
+        
+    
+            circle_f1a6ab242cda639cd9372153f4ebec91.bindTooltip(
+                `<div>
+                     <strong> EXPEDICIONARIOS</strong> <br>Quantidade de beneficiários:<strong>14 </strong>
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_52c7f6cc20930d7cf62db2af8f34f17e = L.circle(
+                [-7.1330071, -34.8766946],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 37.87878787878788, "stroke": true, "weight": 3}
+            ).addTo(map_d4280c53f7b4372c449ba77e856bf5ed);
+        
+    
+            circle_52c7f6cc20930d7cf62db2af8f34f17e.bindTooltip(
+                `<div>
+                     <strong> JAGUARIBE</strong> <br>Quantidade de beneficiários:<strong>10 </strong>
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_080fb9c5203c2107d1eddc15b9acd2c7 = L.circle(
+                [-7.1243744, -34.8621088],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 30.303030303030305, "stroke": true, "weight": 3}
+            ).addTo(map_d4280c53f7b4372c449ba77e856bf5ed);
+        
+    
+            circle_080fb9c5203c2107d1eddc15b9acd2c7.bindTooltip(
+                `<div>
+                     <strong> TORRE</strong> <br>Quantidade de beneficiários:<strong>8 </strong>
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_6f2f6a84e63eeae4e92c5a642062b85e = L.circle(
+                [-7.1540984, -34.8538555],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 22.72727272727273, "stroke": true, "weight": 3}
+            ).addTo(map_d4280c53f7b4372c449ba77e856bf5ed);
+        
+    
+            circle_6f2f6a84e63eeae4e92c5a642062b85e.bindTooltip(
+                `<div>
+                     <strong> AGUA FRIA</strong> <br>Quantidade de beneficiários:<strong>6 </strong>
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_129e59ff16e676383a53d5117c500bda = L.circle(
+                [-7.1498329, -34.8480052],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 18.93939393939394, "stroke": true, "weight": 3}
+            ).addTo(map_d4280c53f7b4372c449ba77e856bf5ed);
+        
+    
+            circle_129e59ff16e676383a53d5117c500bda.bindTooltip(
+                `<div>
+                     <strong> JARDIM SAO PAULO</strong> <br>Quantidade de beneficiários:<strong>5 </strong>
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_bc8db3870ff9de04c3d50cc9045e18c2 = L.circle(
+                [-7.1695048, -34.8393055],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 18.93939393939394, "stroke": true, "weight": 3}
+            ).addTo(map_d4280c53f7b4372c449ba77e856bf5ed);
+        
+    
+            circle_bc8db3870ff9de04c3d50cc9045e18c2.bindTooltip(
+                `<div>
+                     <strong> MANGABEIRA</strong> <br>Quantidade de beneficiários:<strong>5 </strong>
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_4956b40c18b98be225db2b60d75a66d2 = L.circle(
+                [-7.1089293, -34.841942],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 18.93939393939394, "stroke": true, "weight": 3}
+            ).addTo(map_d4280c53f7b4372c449ba77e856bf5ed);
+        
+    
+            circle_4956b40c18b98be225db2b60d75a66d2.bindTooltip(
+                `<div>
+                     <strong> JOAO AGRIPINO</strong> <br>Quantidade de beneficiários:<strong>5 </strong>
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_3c314ace3726c9fb29651600c5bdc1df = L.circle(
+                [-7.1359713, -34.84653414715707],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 15.151515151515152, "stroke": true, "weight": 3}
+            ).addTo(map_d4280c53f7b4372c449ba77e856bf5ed);
+        
+    
+            circle_3c314ace3726c9fb29651600c5bdc1df.bindTooltip(
+                `<div>
+                     <strong> CASTELO BRANCO</strong> <br>Quantidade de beneficiários:<strong>4 </strong>
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_9076ef2febfb1fbe3a3826c1879adb43 = L.circle(
+                [-7.1815386, -34.888108],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 15.151515151515152, "stroke": true, "weight": 3}
+            ).addTo(map_d4280c53f7b4372c449ba77e856bf5ed);
+        
+    
+            circle_9076ef2febfb1fbe3a3826c1879adb43.bindTooltip(
+                `<div>
+                     <strong> FUNCIONARIOS</strong> <br>Quantidade de beneficiários:<strong>4 </strong>
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_a540cc1dc3a5e1171b27a53e849ebca1 = L.circle(
+                [-7.1491878, -34.8440023],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 15.151515151515152, "stroke": true, "weight": 3}
+            ).addTo(map_d4280c53f7b4372c449ba77e856bf5ed);
+        
+    
+            circle_a540cc1dc3a5e1171b27a53e849ebca1.bindTooltip(
+                `<div>
+                     <strong> ANATOLIA</strong> <br>Quantidade de beneficiários:<strong>4 </strong>
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_88c877f3320d583ef3b266e9d258c937 = L.circle(
+                [-7.1779086, -34.8707904],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 11.363636363636365, "stroke": true, "weight": 3}
+            ).addTo(map_d4280c53f7b4372c449ba77e856bf5ed);
+        
+    
+            circle_88c877f3320d583ef3b266e9d258c937.bindTooltip(
+                `<div>
+                     <strong> ERNESTO GEISEL</strong> <br>Quantidade de beneficiários:<strong>3 </strong>
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_8895dd0366acdbcbacbaeeafd431bd88 = L.circle(
+                [-7.1201984, -34.8844923],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 11.363636363636365, "stroke": true, "weight": 3}
+            ).addTo(map_d4280c53f7b4372c449ba77e856bf5ed);
+        
+    
+            circle_8895dd0366acdbcbacbaeeafd431bd88.bindTooltip(
+                `<div>
+                     <strong> CENTRO</strong> <br>Quantidade de beneficiários:<strong>3 </strong>
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_88f88c20b0b45e1146ea9a714e729918 = L.circle(
+                [-7.157875, -34.8974765],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.575757575757576, "stroke": true, "weight": 3}
+            ).addTo(map_d4280c53f7b4372c449ba77e856bf5ed);
+        
+    
+            circle_88f88c20b0b45e1146ea9a714e729918.bindTooltip(
+                `<div>
+                     <strong> OITIZEIRO</strong> <br>Quantidade de beneficiários:<strong>2 </strong>
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_1d0e859a3dbc98e7440790334e498a93 = L.circle(
+                [-7.1169813, -34.8764524],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.575757575757576, "stroke": true, "weight": 3}
+            ).addTo(map_d4280c53f7b4372c449ba77e856bf5ed);
+        
+    
+            circle_1d0e859a3dbc98e7440790334e498a93.bindTooltip(
+                `<div>
+                     <strong> TAMBIA</strong> <br>Quantidade de beneficiários:<strong>2 </strong>
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_b19004fb6ca637a5b6ee79c59e50a276 = L.circle(
+                [-7.1432217, -34.8876209],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.575757575757576, "stroke": true, "weight": 3}
+            ).addTo(map_d4280c53f7b4372c449ba77e856bf5ed);
+        
+    
+            circle_b19004fb6ca637a5b6ee79c59e50a276.bindTooltip(
+                `<div>
+                     <strong> CRUZ DAS ARMAS</strong> <br>Quantidade de beneficiários:<strong>2 </strong>
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_4495ebb16da4e85feaf210c774ea2b3d = L.circle(
+                [-7.1006548, -34.8550283],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.575757575757576, "stroke": true, "weight": 3}
+            ).addTo(map_d4280c53f7b4372c449ba77e856bf5ed);
+        
+    
+            circle_4495ebb16da4e85feaf210c774ea2b3d.bindTooltip(
+                `<div>
+                     <strong> BAIRRO DOS IPES</strong> <br>Quantidade de beneficiários:<strong>2 </strong>
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_5ee5de50d85b8a2e95aaa2e350e77b47 = L.circle(
+                [-7.1833226, -34.8624575],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.787878787878788, "stroke": true, "weight": 3}
+            ).addTo(map_d4280c53f7b4372c449ba77e856bf5ed);
+        
+    
+            circle_5ee5de50d85b8a2e95aaa2e350e77b47.bindTooltip(
+                `<div>
+                     <strong> CUIA</strong> <br>Quantidade de beneficiários:<strong>1 </strong>
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_29c44ab803ef649c178222cd7c81286e = L.circle(
+                [-7.1769358, -34.8790314],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.787878787878788, "stroke": true, "weight": 3}
+            ).addTo(map_d4280c53f7b4372c449ba77e856bf5ed);
+        
+    
+            circle_29c44ab803ef649c178222cd7c81286e.bindTooltip(
+                `<div>
+                     <strong> JOAO PAULO II</strong> <br>Quantidade de beneficiários:<strong>1 </strong>
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_4b5078226ecf1481ee5df96b32c8c39f = L.circle(
+                [-7.1550796, -34.7933086],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.787878787878788, "stroke": true, "weight": 3}
+            ).addTo(map_d4280c53f7b4372c449ba77e856bf5ed);
+        
+    
+            circle_4b5078226ecf1481ee5df96b32c8c39f.bindTooltip(
+                `<div>
+                     <strong> PONTA DO SEIXAS</strong> <br>Quantidade de beneficiários:<strong>1 </strong>
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_0071b82579434e5f7ea071e9a5ee1422 = L.circle(
+                [-7.1106124, -34.8776429],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.787878787878788, "stroke": true, "weight": 3}
+            ).addTo(map_d4280c53f7b4372c449ba77e856bf5ed);
+        
+    
+            circle_0071b82579434e5f7ea071e9a5ee1422.bindTooltip(
+                `<div>
+                     <strong> ROGER</strong> <br>Quantidade de beneficiários:<strong>1 </strong>
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_a63bd5f94925e37a13cd33f961b54a1a = L.circle(
+                [-7.1592753, -34.8472982],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.787878787878788, "stroke": true, "weight": 3}
+            ).addTo(map_d4280c53f7b4372c449ba77e856bf5ed);
+        
+    
+            circle_a63bd5f94925e37a13cd33f961b54a1a.bindTooltip(
+                `<div>
+                     <strong> CIDADE DOS COLIBRIS</strong> <br>Quantidade de beneficiários:<strong>1 </strong>
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_98c8f4a0ead01db892e749256d2d52d7 = L.circle(
+                [-7.2017802, -34.8476424],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.787878787878788, "stroke": true, "weight": 3}
+            ).addTo(map_d4280c53f7b4372c449ba77e856bf5ed);
+        
+    
+            circle_98c8f4a0ead01db892e749256d2d52d7.bindTooltip(
+                `<div>
+                     <strong> VALENTINA DE FIGUEIREDO</strong> <br>Quantidade de beneficiários:<strong>1 </strong>
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_2eb23fab624608e63a256a8e10c9284f = L.circle(
+                [-7.1487617, -34.8729619],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.787878787878788, "stroke": true, "weight": 3}
+            ).addTo(map_d4280c53f7b4372c449ba77e856bf5ed);
+        
+    
+            circle_2eb23fab624608e63a256a8e10c9284f.bindTooltip(
+                `<div>
+                     <strong> RANGEL</strong> <br>Quantidade de beneficiários:<strong>1 </strong>
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_bd87290c90d260ee49681794df21b21e = L.circle(
+                [-7.1779086, -34.8707904],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.787878787878788, "stroke": true, "weight": 3}
+            ).addTo(map_d4280c53f7b4372c449ba77e856bf5ed);
+        
+    
+            circle_bd87290c90d260ee49681794df21b21e.bindTooltip(
+                `<div>
+                     <strong> GEISEL</strong> <br>Quantidade de beneficiários:<strong>1 </strong>
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_6715c055c7b525d4929b5c5afeb8c677 = L.circle(
+                [-7.1768597, -34.890496922995155],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.787878787878788, "stroke": true, "weight": 3}
+            ).addTo(map_d4280c53f7b4372c449ba77e856bf5ed);
+        
+    
+            circle_6715c055c7b525d4929b5c5afeb8c677.bindTooltip(
+                `<div>
+                     <strong> ERNANI SATIRO</strong> <br>Quantidade de beneficiários:<strong>1 </strong>
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_4b46e48fa6e28228d1b2522792632663 = L.circle(
+                [-7.2150478, -34.8358799],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.787878787878788, "stroke": true, "weight": 3}
+            ).addTo(map_d4280c53f7b4372c449ba77e856bf5ed);
+        
+    
+            circle_4b46e48fa6e28228d1b2522792632663.bindTooltip(
+                `<div>
+                     <strong> MUCUMAGRO</strong> <br>Quantidade de beneficiários:<strong>1 </strong>
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_d89e940a65fa93840e9931d4a1ca87bc = L.circle(
+                [-7.1051464, -34.8700633],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.787878787878788, "stroke": true, "weight": 3}
+            ).addTo(map_d4280c53f7b4372c449ba77e856bf5ed);
+        
+    
+            circle_d89e940a65fa93840e9931d4a1ca87bc.bindTooltip(
+                `<div>
+                     <strong> PADRE ZE</strong> <br>Quantidade de beneficiários:<strong>1 </strong>
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+</script>
+</html>
